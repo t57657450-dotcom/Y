@@ -7,4 +7,560 @@
 
 <style>
 *{
-    box-sizing:border
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Tahoma,Arial,sans-serif;
+    background:#0b0b0f;
+    color:#fff;
+}
+
+.container{
+    width:min(1100px,94%);
+    margin:auto;
+}
+
+header{
+    padding:25px 0;
+    text-align:center;
+    border-bottom:1px solid #292932;
+}
+
+header h1{
+    margin:0;
+    font-size:28px;
+}
+
+header p{
+    color:#aaa;
+}
+
+.card{
+    background:#15151c;
+    border:1px solid #292932;
+    border-radius:16px;
+    padding:20px;
+    margin:20px 0;
+}
+
+h2{
+    margin-top:0;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+label{
+    display:block;
+    margin-bottom:7px;
+    color:#bbb;
+}
+
+select,
+button{
+    width:100%;
+    padding:13px;
+    border-radius:10px;
+    border:1px solid #33333e;
+    background:#0e0e13;
+    color:#fff;
+    font-size:15px;
+}
+
+button{
+    cursor:pointer;
+    background:#b00020;
+    border:none;
+    font-weight:bold;
+}
+
+button:hover{
+    opacity:.85;
+}
+
+.result{
+    display:none;
+}
+
+.score{
+    text-align:center;
+    font-size:32px;
+    font-weight:bold;
+    margin:20px 0;
+}
+
+.teams{
+    display:grid;
+    grid-template-columns:1fr 100px 1fr;
+    gap:15px;
+    align-items:center;
+    text-align:center;
+}
+
+.team{
+    font-size:20px;
+    font-weight:bold;
+}
+
+.score-box{
+    font-size:32px;
+}
+
+.stats{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.stats td{
+    padding:11px;
+    border-bottom:1px solid #292932;
+    text-align:center;
+}
+
+.event{
+    padding:9px;
+    margin:5px 0;
+    background:#0e0e13;
+    border-radius:8px;
+}
+
+.best{
+    text-align:center;
+    padding:15px;
+    background:#211c08;
+    border-radius:12px;
+    margin-top:15px;
+}
+
+.download{
+    margin-top:20px;
+}
+
+@media(max-width:700px){
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .teams{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <h1>🏆 لیگ مجازی مربیان</h1>
+        <p>سیستم شبیه‌سازی مسابقات</p>
+    </div>
+</header>
+
+<main class="container">
+
+<section class="card">
+
+<h2>⚽ ساخت مسابقه</h2>
+
+<div class="grid">
+
+<div>
+<label>تیم اول</label>
+<select id="homeTeam"></select>
+</div>
+
+<div>
+<label>تیم دوم</label>
+<select id="awayTeam"></select>
+</div>
+
+<div>
+<label>آرایش تیم اول</label>
+<select id="homeFormation">
+<option value="4-3-3">4-3-3</option>
+<option value="4-2-3-1">4-2-3-1</option>
+<option value="4-4-2">4-4-2</option>
+<option value="3-5-2">3-5-2</option>
+<option value="5-3-2">5-3-2</option>
+<option value="4-3-1-2">4-3-1-2</option>
+</select>
+</div>
+
+<div>
+<label>آرایش تیم دوم</label>
+<select id="awayFormation">
+<option value="4-3-3">4-3-3</option>
+<option value="4-2-3-1">4-2-3-1</option>
+<option value="4-4-2">4-4-2</option>
+<option value="3-5-2">3-5-2</option>
+<option value="5-3-2">5-3-2</option>
+<option value="4-3-1-2">4-3-1-2</option>
+</select>
+</div>
+
+<div>
+<label>تاکتیک تیم اول</label>
+<select id="homeTactic">
+<option value="balanced">متعادل</option>
+<option value="attacking">هجومی</option>
+<option value="defensive">دفاعی</option>
+<option value="possession">مالکیت توپ</option>
+<option value="counter">ضدحمله</option>
+<option value="pressing">پرس شدید</option>
+</select>
+</div>
+
+<div>
+<label>تاکتیک تیم دوم</label>
+<select id="awayTactic">
+<option value="balanced">متعادل</option>
+<option value="attacking">هجومی</option>
+<option value="defensive">دفاعی</option>
+<option value="possession">مالکیت توپ</option>
+<option value="counter">ضدحمله</option>
+<option value="pressing">پرس شدید</option>
+</select>
+</div>
+
+</div>
+
+<br>
+
+<button onclick="startMatch()">
+🚀 شروع مسابقه
+</button>
+
+</section>
+
+
+<section id="result" class="card result">
+
+<h2>🏆 نتیجه مسابقه</h2>
+
+<div class="teams">
+
+<div class="team" id="resultHome">
+تیم اول
+</div>
+
+<div class="score-box" id="resultScore">
+0 - 0
+</div>
+
+<div class="team" id="resultAway">
+تیم دوم
+</div>
+
+</div>
+
+
+<div id="overallInfo"></div>
+
+
+<h3>⚽ گلزنان</h3>
+<div id="goals"></div>
+
+
+<h3>🟨 کارت زرد</h3>
+<div id="yellowCards"></div>
+
+
+<h3>🟥 کارت قرمز</h3>
+<div id="redCards"></div>
+
+
+<h3>🔄 تعویض‌ها</h3>
+<div id="substitutions"></div>
+
+
+<h3>📊 آمار بازی</h3>
+
+<table class="stats">
+
+<tr>
+<td>مالکیت</td>
+<td id="possession"></td>
+</tr>
+
+<tr>
+<td>شوت</td>
+<td id="shots"></td>
+</tr>
+
+<tr>
+<td>شوت در چارچوب</td>
+<td id="shotsTarget"></td>
+</tr>
+
+<tr>
+<td>کرنر</td>
+<td id="corners"></td>
+</tr>
+
+<tr>
+<td>خطا</td>
+<td id="fouls"></td>
+</tr>
+
+<tr>
+<td>آفساید</td>
+<td id="offsides"></td>
+</tr>
+
+<tr>
+<td>پاس</td>
+<td id="passes"></td>
+</tr>
+
+<tr>
+<td>دقت پاس</td>
+<td id="passAccuracy"></td>
+</tr>
+
+</table>
+
+
+<div class="best">
+⭐ بهترین بازیکن:
+<strong id="bestPlayer">-</strong>
+</div>
+
+
+<button class="download" onclick="downloadResult()">
+📥 دانلود تصویر نتیجه
+</button>
+
+</section>
+
+</main>
+
+
+<script src="players.js"></script>
+<script src="match-simulator.js"></script>
+
+
+<script>
+
+// ==========================================
+// پیدا کردن تیم‌ها
+// ==========================================
+
+function getTeamsList(){
+
+    if(typeof TEAMS !== "undefined"){
+        return Object.values(TEAMS);
+    }
+
+    if(typeof teams !== "undefined"){
+        return Object.values(teams);
+    }
+
+    return [];
+}
+
+
+// ==========================================
+// پر کردن تیم‌ها
+// ==========================================
+
+function loadTeams(){
+
+    const teams = getTeamsList();
+
+    const home =
+        document.getElementById("homeTeam");
+
+    const away =
+        document.getElementById("awayTeam");
+
+    teams.forEach((team,index)=>{
+
+        const option1 =
+            document.createElement("option");
+
+        option1.value = index;
+
+        option1.textContent =
+            team.name || team.id || `تیم ${index+1}`;
+
+        home.appendChild(option1);
+
+
+        const option2 =
+            document.createElement("option");
+
+        option2.value = index;
+
+        option2.textContent =
+            team.name || team.id || `تیم ${index+1}`;
+
+        away.appendChild(option2);
+
+    });
+
+}
+
+
+// ==========================================
+// گرفتن بازیکنان تیم
+// ==========================================
+
+function getTeamPlayers(team){
+
+    if(!team) return [];
+
+    if(Array.isArray(team.players)){
+        return team.players;
+    }
+
+    if(typeof getPlayersByTeam === "function"){
+
+        try{
+            return getPlayersByTeam(
+                team.name || team.id
+            );
+        }catch(e){}
+    }
+
+    return [];
+}
+
+
+// ==========================================
+// شروع مسابقه
+// ==========================================
+
+function startMatch(){
+
+    const teams = getTeamsList();
+
+    if(teams.length < 2){
+
+        alert(
+            "❌ تیم‌ها از فایل بازیکنان پیدا نشدند."
+        );
+
+        return;
+    }
+
+
+    const homeIndex =
+        Number(
+            document.getElementById(
+                "homeTeam"
+            ).value
+        );
+
+    const awayIndex =
+        Number(
+            document.getElementById(
+                "awayTeam"
+            ).value
+        );
+
+
+    if(homeIndex === awayIndex){
+
+        alert(
+            "❌ دو تیم باید متفاوت باشند."
+        );
+
+        return;
+    }
+
+
+    const homeTeam =
+        teams[homeIndex];
+
+    const awayTeam =
+        teams[awayIndex];
+
+
+    const homePlayers =
+        getTeamPlayers(homeTeam);
+
+    const awayPlayers =
+        getTeamPlayers(awayTeam);
+
+
+    if(typeof simulateFullMatch !== "function"){
+
+        alert(
+            "❌ فایل شبیه‌ساز مسابقه پیدا نشد."
+        );
+
+        return;
+    }
+
+
+    const result =
+        simulateFullMatch(
+
+            homeTeam,
+
+            awayTeam,
+
+            {
+
+                homePlayers,
+
+                awayPlayers,
+
+                homeFormation:
+                    document.getElementById(
+                        "homeFormation"
+                    ).value,
+
+                awayFormation:
+                    document.getElementById(
+                        "awayFormation"
+                    ).value,
+
+                homeTactic:
+                    document.getElementById(
+                        "homeTactic"
+                    ).value,
+
+                awayTactic:
+                    document.getElementById(
+                        "awayTactic"
+                    ).value
+            }
+        );
+
+
+    showResult(result);
+}
+
+
+// ==========================================
+// نمایش نتیجه
+// ==========================================
+
+function showResult(result){
+
+    document.getElementById(
+        "result"
+    ).style.display = "block";
+
+
+    document.getElementById(
+        "resultHome"
+    ).textContent =
+        result.home.name;
+
+
+    document.getElementById(
+        "resultAway"
+    ).textContent =
+        result.away.name;
+
+
+    document.getElementById(
+       
