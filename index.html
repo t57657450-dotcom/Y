@@ -2,128 +2,152 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>لیگ مجازی مربیان</title>
 
 <style>
 *{box-sizing:border-box}
+
 body{
-margin:0;
-background:#070b12;
-color:#fff;
-font-family:Tahoma,Arial,sans-serif
+    margin:0;
+    background:#070b12;
+    color:#fff;
+    font-family:Tahoma,Arial,sans-serif;
 }
+
 .container{
-width:94%;
-max-width:1100px;
-margin:20px auto
+    width:94%;
+    max-width:1100px;
+    margin:20px auto;
 }
+
 .card{
-background:#111827;
-border:1px solid #263244;
-border-radius:18px;
-padding:20px;
-margin-bottom:18px
+    background:#111827;
+    border:1px solid #293548;
+    border-radius:18px;
+    padding:20px;
+    margin-bottom:18px;
 }
-h1,h2,h3{margin-top:0}
+
+h1,h2,h3{
+    margin-top:0;
+}
+
 .grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:16px
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
 }
+
 @media(max-width:700px){
-.grid{grid-template-columns:1fr}
+    .grid{
+        grid-template-columns:1fr;
+    }
 }
+
 label{
-display:block;
-margin:10px 0 6px;
-color:#cbd5e1
+    display:block;
+    margin:10px 0 7px;
+    color:#cbd5e1;
 }
+
 input,select,button{
-width:100%;
-padding:13px;
-border-radius:10px;
-border:1px solid #374151;
-background:#0b111b;
-color:#fff;
-font-size:15px
+    width:100%;
+    padding:14px;
+    border-radius:10px;
+    border:1px solid #374151;
+    background:#0b111b;
+    color:white;
+    font-size:15px;
 }
+
 button{
-background:#2563eb;
-border:0;
-font-weight:bold;
-cursor:pointer;
-margin-top:10px
+    background:#2563eb;
+    border:0;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:12px;
 }
-button:hover{opacity:.9}
-.hidden{display:none!important}
+
+button:active{
+    transform:scale(.98);
+}
+
+.hidden{
+    display:none !important;
+}
+
 .notice{
-padding:12px;
-border-radius:10px;
-background:#172033;
-margin:12px 0
+    padding:12px;
+    border-radius:10px;
+    background:#172033;
+    margin:12px 0;
 }
+
 .error{
-background:#3a1115;
-color:#fecaca
+    background:#3a1115;
+    color:#fecaca;
 }
-.success{
-background:#07351f;
-color:#bbf7d0
-}
+
 .team-title{
-font-size:20px;
-font-weight:bold;
-margin-bottom:15px
+    font-size:20px;
+    font-weight:bold;
+    margin-bottom:15px;
 }
+
 .position{
-background:#0b111b;
-border-radius:12px;
-padding:12px;
-margin-bottom:9px
+    background:#0b111b;
+    border-radius:12px;
+    padding:12px;
+    margin-bottom:9px;
 }
+
 .position-title{
-font-size:13px;
-color:#94a3b8;
-margin-bottom:6px
+    color:#94a3b8;
+    font-size:13px;
+    margin-bottom:7px;
 }
-.status{
-font-size:12px;
-margin-top:4px
+
+.player-input{
+    margin:0;
 }
-.ok{color:#4ade80}
-.bad{color:#f87171}
+
 .score{
-font-size:55px;
-font-weight:bold;
-text-align:center;
-margin:20px 0
+    text-align:center;
+    font-size:55px;
+    font-weight:bold;
+    margin:20px 0;
 }
+
 .teams{
-text-align:center;
-font-size:21px
+    text-align:center;
+    font-size:21px;
 }
+
 .stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-gap:10px
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+    gap:10px;
 }
+
 .stat{
-background:#0b111b;
-padding:13px;
-border-radius:10px;
-text-align:center
+    background:#0b111b;
+    padding:14px;
+    border-radius:10px;
+    text-align:center;
 }
+
 .stat b{
-display:block;
-font-size:20px;
-margin-top:5px
+    display:block;
+    font-size:20px;
+    margin-top:6px;
 }
+
 .event{
-background:#0b111b;
-padding:11px;
-border-radius:9px;
-margin:7px 0
+    background:#0b111b;
+    padding:11px;
+    border-radius:9px;
+    margin:7px 0;
 }
 </style>
 </head>
@@ -132,216 +156,287 @@ margin:7px 0
 
 <div class="container">
 
+<!-- ========================= -->
+<!-- صفحه اصلی -->
+<!-- ========================= -->
+
 <div class="card">
-<h1>⚽ لیگ مجازی مربیان</h1>
-<p>شبیه‌ساز مسابقات فوتبال</p>
+    <h1>⚽ لیگ مجازی مربیان</h1>
+    <p>شبیه‌ساز مسابقه فوتبال</p>
 </div>
 
 
-<!-- ================= مرحله ۱ ================= -->
+<!-- ========================= -->
+<!-- مرحله ۱ -->
+<!-- ========================= -->
 
 <section id="step1" class="card">
 
-<h2>🏟️ مرحله ۱ — انتخاب تیم‌ها</h2>
+    <h2>🏟️ شروع مسابقه</h2>
 
-<div class="grid">
+    <div class="grid">
 
-<div>
-<label>🏠 تیم میزبان</label>
-<input
-id="homeTeam"
-type="text"
-placeholder="مثلاً رئال مادرید">
-</div>
+        <div>
+            <label>🏠 تیم میزبان</label>
 
-<div>
-<label>✈️ تیم مهمان</label>
-<input
-id="awayTeam"
-type="text"
-placeholder="مثلاً بارسلونا">
-</div>
+            <input
+                id="homeTeam"
+                type="text"
+                placeholder="نام تیم میزبان"
+            >
+        </div>
 
-</div>
+        <div>
+            <label>✈️ تیم مهمان</label>
 
-<button id="continueBtn">
-ادامه ➜
-</button>
+            <input
+                id="awayTeam"
+                type="text"
+                placeholder="نام تیم مهمان"
+            >
+        </div>
 
-<div id="step1msg"></div>
+    </div>
+
+    <button type="button" id="nextStepBtn">
+        ادامه ➜
+    </button>
+
+    <div id="step1Message"></div>
 
 </section>
 
 
-<!-- ================= مرحله ۲ ================= -->
+<!-- ========================= -->
+<!-- مرحله ۲ -->
+<!-- ========================= -->
 
 <section id="step2" class="card hidden">
 
-<h2>👥 مرحله ۲ — ثبت ترکیب</h2>
+    <h2>👥 ترکیب تیم‌ها</h2>
 
-<div class="notice">
-اسم بازیکنان را مستقیماً تایپ کن.
-لازم نیست روی بازیکن کلیک کنی.
-</div>
-
-<div class="grid">
+    <div class="notice">
+        اسم بازیکنان را خودت تایپ کن.
+        نیازی به کلیک روی بازیکن نیست.
+    </div>
 
 
-<!-- میزبان -->
+    <div class="grid">
 
-<div>
+        <!-- تیم میزبان -->
 
-<div
-id="homeTitle"
-class="team-title">
-🏠 تیم میزبان
-</div>
+        <div>
 
-<label>آرایش</label>
+            <div
+                id="homeTeamTitle"
+                class="team-title">
+                🏠 تیم میزبان
+            </div>
 
-<select id="homeFormation">
-<option value="4-3-3">4-3-3</option>
-<option value="4-2-3-1">4-2-3-1</option>
-<option value="4-4-2">4-4-2</option>
-<option value="3-5-2">3-5-2</option>
-<option value="4-3-1-2">4-3-1-2</option>
-<option value="5-3-2">5-3-2</option>
-</select>
+            <label>آرایش</label>
 
-<div id="homePositions"></div>
+            <select id="homeFormation">
+                <option>4-3-3</option>
+                <option>4-2-3-1</option>
+                <option>4-4-2</option>
+                <option>3-5-2</option>
+                <option>5-3-2</option>
+            </select>
 
-<h3>🪑 نیمکت</h3>
+            <div id="homePlayers"></div>
 
-<div id="homeBench"></div>
+            <h3>🪑 نیمکت</h3>
 
-</div>
+            <div id="homeBench"></div>
+
+        </div>
 
 
-<!-- مهمان -->
+        <!-- تیم مهمان -->
 
-<div>
+        <div>
 
-<div
-id="awayTitle"
-class="team-title">
-✈️ تیم مهمان
-</div>
+            <div
+                id="awayTeamTitle"
+                class="team-title">
+                ✈️ تیم مهمان
+            </div>
 
-<label>آرایش</label>
+            <label>آرایش</label>
 
-<select id="awayFormation">
-<option value="4-3-3">4-3-3</option>
-<option value="4-2-3-1">4-2-3-1</option>
-<option value="4-4-2">4-4-2</option>
-<option value="3-5-2">3-5-2</option>
-<option value="4-3-1-2">4-3-1-2</option>
-<option value="5-3-2">5-3-2</option>
-</select>
+            <select id="awayFormation">
+                <option>4-3-3</option>
+                <option>4-2-3-1</option>
+                <option>4-4-2</option>
+                <option>3-5-2</option>
+                <option>5-3-2</option>
+            </select>
 
-<div id="awayPositions"></div>
+            <div id="awayPlayers"></div>
 
-<h3>🪑 نیمکت</h3>
+            <h3>🪑 نیمکت</h3>
 
-<div id="awayBench"></div>
+            <div id="awayBench"></div>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
-<button id="lineupBtn">
-تأیید ترکیب و مرحله بعد ➜
-</button>
 
-<div id="lineupMsg"></div>
+    <button
+        type="button"
+        id="nextTacticBtn">
+        تأیید ترکیب و مرحله بعد ➜
+    </button>
+
+    <div id="lineupMessage"></div>
 
 </section>
 
 
-<!-- ================= مرحله ۳ ================= -->
+<!-- ========================= -->
+<!-- مرحله ۳ -->
+<!-- ========================= -->
 
 <section id="step3" class="card hidden">
 
-<h2>🎯 مرحله ۳ — تاکتیک</h2>
+    <h2>🎯 تاکتیک</h2>
 
-<div class="grid">
+    <div class="grid">
 
-<div>
+        <div>
 
-<h3 id="tacticHomeName"></h3>
+            <h3 id="homeTacticTitle"></h3>
 
-<label>تاکتیک</label>
+            <label>تاکتیک</label>
 
-<select id="homeTactic">
-<option value="balanced">⚖️ متعادل</option>
-<option value="attacking">🔥 هجومی</option>
-<option value="defensive">🛡️ دفاعی</option>
-<option value="possession">🎯 مالکیت توپ</option>
-<option value="counter">⚡ ضدحمله</option>
-<option value="pressing">💨 پرس شدید</option>
-</select>
+            <select id="homeTactic">
 
-</div>
+                <option value="balanced">
+                    ⚖️ متعادل
+                </option>
+
+                <option value="attacking">
+                    🔥 هجومی
+                </option>
+
+                <option value="defensive">
+                    🛡️ دفاعی
+                </option>
+
+                <option value="possession">
+                    🎯 مالکیت توپ
+                </option>
+
+                <option value="counter">
+                    ⚡ ضدحمله
+                </option>
+
+                <option value="pressing">
+                    💨 پرس شدید
+                </option>
+
+            </select>
+
+        </div>
 
 
-<div>
+        <div>
 
-<h3 id="tacticAwayName"></h3>
+            <h3 id="awayTacticTitle"></h3>
 
-<label>تاکتیک</label>
+            <label>تاکتیک</label>
 
-<select id="awayTactic">
-<option value="balanced">⚖️ متعادل</option>
-<option value="attacking">🔥 هجومی</option>
-<option value="defensive">🛡️ دفاعی</option>
-<option value="possession">🎯 مالکیت توپ</option>
-<option value="counter">⚡ ضدحمله</option>
-<option value="pressing">💨 پرس شدید</option>
-</select>
+            <select id="awayTactic">
 
-</div>
+                <option value="balanced">
+                    ⚖️ متعادل
+                </option>
 
-</div>
+                <option value="attacking">
+                    🔥 هجومی
+                </option>
 
-<button id="startBtn">
-⚽ شروع مسابقه
-</button>
+                <option value="defensive">
+                    🛡️ دفاعی
+                </option>
 
-<div id="startMsg"></div>
+                <option value="possession">
+                    🎯 مالکیت توپ
+                </option>
+
+                <option value="counter">
+                    ⚡ ضدحمله
+                </option>
+
+                <option value="pressing">
+                    💨 پرس شدید
+                </option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+
+    <button
+        type="button"
+        id="startMatchBtn">
+        ⚽ شروع مسابقه
+    </button>
 
 </section>
 
 
-<!-- ================= نتیجه ================= -->
+<!-- ========================= -->
+<!-- نتیجه -->
+<!-- ========================= -->
 
 <section id="result" class="card hidden">
 
-<h2>🏆 گزارش نهایی مسابقه</h2>
+    <h2>🏆 نتیجه مسابقه</h2>
 
-<div id="resultTeams" class="teams"></div>
+    <div
+        id="resultTeams"
+        class="teams">
+    </div>
 
-<div id="score" class="score"></div>
+    <div
+        id="resultScore"
+        class="score">
+    </div>
 
-<h3>⚽ گلزنان</h3>
-<div id="goals"></div>
 
-<h3>🟨 کارت زرد</h3>
-<div id="yellow"></div>
+    <h3>⚽ گلزنان</h3>
+    <div id="goals"></div>
 
-<h3>🟥 کارت قرمز</h3>
-<div id="red"></div>
 
-<h3>🔄 تعویض‌ها</h3>
-<div id="subs"></div>
+    <h3>🟨 کارت زرد</h3>
+    <div id="yellowCards"></div>
 
-<h3>📊 آمار بازی</h3>
-<div id="stats" class="stats"></div>
 
-<h3>⭐ بهترین بازیکن</h3>
-<div id="mvp"></div>
+    <h3>🟥 کارت قرمز</h3>
+    <div id="redCards"></div>
 
-<button id="downloadBtn">
-📥 دانلود تصویر نتیجه
-</button>
+
+    <h3>🔄 تعویض‌ها</h3>
+    <div id="substitutions"></div>
+
+
+    <h3>📊 آمار بازی</h3>
+    <div id="matchStats" class="stats"></div>
+
+
+    <h3>⭐ بهترین بازیکن</h3>
+    <div id="mvp"></div>
+
+
+    <button
+        type="button"
+        id="downloadBtn">
+        📥 دانلود تصویر نتیجه
+    </button>
 
 </section>
 
@@ -350,1179 +445,870 @@ class="team-title">
 
 <script>
 
-/* =====================================
+/* ======================================
    متغیرها
-===================================== */
+====================================== */
 
-let homeTeamName="";
-let awayTeamName="";
+let homeTeam = "";
+let awayTeam = "";
 
-let homeLineup=[];
-let awayLineup=[];
+let homePlayers = [];
+let awayPlayers = [];
 
-let homeBench=[];
-let awayBench=[];
+let homeBench = [];
+let awayBench = [];
 
-let database={};
 
+/* ======================================
+   پست‌های اصلی
+====================================== */
 
-/* =====================================
-   ابزار
-===================================== */
+const positions = [
 
-function normalize(value){
+    "دروازه‌بان",
 
-return String(value||"")
-.trim()
-.toLowerCase()
-.replace(/ي/g,"ی")
-.replace(/ك/g,"ک");
+    "دفاع راست",
 
-}
+    "مدافع وسط ۱",
 
+    "مدافع وسط ۲",
 
-function showMessage(id,text,error=false){
+    "دفاع چپ",
 
-const box=document.getElementById(id);
+    "هافبک دفاعی",
 
-box.className=
-"notice "+(error?"error":"success");
+    "هافبک مرکزی",
 
-box.textContent=text;
+    "هافبک هجومی",
 
-}
+    "وینگر راست",
 
+    "مهاجم",
 
-/* =====================================
-   بانک بازیکنان
-===================================== */
+    "وینگر چپ"
 
-function loadDatabase(){
-
-try{
-
-if(typeof TEAMS!=="undefined"){
-database=TEAMS;
-return;
-}
-
-if(typeof teams!=="undefined"){
-database=teams;
-return;
-}
-
-if(typeof PLAYERS!=="undefined"){
-
-database={};
-
-PLAYERS.forEach(player=>{
-
-const team=
-player.team||
-player.club||
-player.currentTeam||
-player.realClub;
-
-if(!team)return;
-
-if(!database[team]){
-database[team]={
-name:team,
-players:[]
-};
-}
-
-database[team].players.push(player);
-
-});
-
-return;
-
-}
-
-if(typeof players!=="undefined"){
-
-database={};
-
-players.forEach(player=>{
-
-const team=
-player.team||
-player.club||
-player.currentTeam;
-
-if(!team)return;
-
-if(!database[team]){
-database[team]={
-name:team,
-players:[]
-};
-}
-
-database[team].players.push(player);
-
-});
-
-}
-
-}catch(error){
-
-console.log(error);
-
-}
-
-}
-
-
-function getTeam(name){
-
-const wanted=normalize(name);
-
-const keys=Object.keys(database);
-
-const exact=keys.find(
-key=>normalize(key)===wanted
-);
-
-if(exact)return database[exact];
-
-const partial=keys.find(
-key=>
-normalize(key).includes(wanted)||
-wanted.includes(normalize(key))
-);
-
-return partial?
-database[partial]:
-null;
-
-}
-
-
-function getPlayers(teamName){
-
-const team=getTeam(teamName);
-
-if(!team)return [];
-
-if(Array.isArray(team))
-return team;
-
-if(Array.isArray(team.players))
-return team.players;
-
-return [];
-
-}
-
-
-function findPlayer(teamName,name){
-
-const wanted=normalize(name);
-
-return getPlayers(teamName).find(player=>{
-
-const playerName=
-player.name||
-player.player||
-player.fullName||
-player.playerName;
-
-return normalize(playerName)===wanted;
-
-});
-
-}
-
-
-/* =====================================
-   مرحله ۱
-===================================== */
-
-function goNext(){
-
-homeTeamName=
-document.getElementById("homeTeam")
-.value.trim();
-
-awayTeamName=
-document.getElementById("awayTeam")
-.value.trim();
-
-
-if(!homeTeamName||!awayTeamName){
-
-showMessage(
-"step1msg",
-"اسم هر دو تیم را وارد کن.",
-true
-);
-
-return;
-
-}
-
-
-if(
-normalize(homeTeamName)===
-normalize(awayTeamName)
-){
-
-showMessage(
-"step1msg",
-"دو تیم نمی‌توانند یکسان باشند.",
-true
-);
-
-return;
-
-}
-
-
-/*
-مهم:
-اینجا دیگر بانک بازیکنان بررسی نمی‌شود.
-بنابراین دکمه ادامه همیشه مرحله بعد را باز می‌کند.
-*/
-
-
-document.getElementById("homeTitle")
-.textContent=
-"🏠 "+homeTeamName;
-
-document.getElementById("awayTitle")
-.textContent=
-"✈️ "+awayTeamName;
-
-
-createPositions(
-"homePositions",
-"home"
-);
-
-createPositions(
-"awayPositions",
-"away"
-);
-
-createBench(
-"homeBench",
-"home"
-);
-
-createBench(
-"awayBench",
-"away"
-);
-
-
-document.getElementById("step1")
-.classList.add("hidden");
-
-document.getElementById("step2")
-.classList.remove("hidden");
-
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
-
-}
-
-
-/* =====================================
-   پست‌ها
-===================================== */
-
-const positions=[
-"دروازه‌بان",
-"دفاع راست",
-"مدافع وسط ۱",
-"مدافع وسط ۲",
-"دفاع چپ",
-"هافبک دفاعی",
-"هافبک مرکزی",
-"هافبک هجومی",
-"وینگر راست",
-"مهاجم",
-"وینگر چپ"
 ];
 
 
-function createPositions(id,type){
+/* ======================================
+   مرحله ۱
+====================================== */
 
-const box=
-document.getElementById(id);
+document
+.getElementById("nextStepBtn")
+.addEventListener("click", function(){
 
-box.innerHTML="";
+    homeTeam =
+        document
+        .getElementById("homeTeam")
+        .value
+        .trim();
+
+    awayTeam =
+        document
+        .getElementById("awayTeam")
+        .value
+        .trim();
 
 
-positions.forEach((position,index)=>{
+    if(homeTeam === "" || awayTeam === ""){
 
-const div=
-document.createElement("div");
+        document
+        .getElementById("step1Message")
+        .innerHTML =
+        '<div class="notice error">اول اسم هر دو تیم را وارد کن.</div>';
 
-div.className="position";
+        return;
+    }
 
-div.innerHTML=`
 
-<div class="position-title">
-${position}
-</div>
+    if(
+        homeTeam.toLowerCase() ===
+        awayTeam.toLowerCase()
+    ){
 
-<input
-class="${type}-player"
-data-index="${index}"
-placeholder="اسم بازیکن را بنویس..."
-type="text">
+        document
+        .getElementById("step1Message")
+        .innerHTML =
+        '<div class="notice error">دو تیم نمی‌توانند یکسان باشند.</div>';
 
-<div
-class="status"
-id="${type}-status-${index}">
-</div>
+        return;
+    }
 
-`;
 
-box.appendChild(div);
+    /* ساخت ترکیب */
+
+    createLineup(
+        "homePlayers",
+        "home"
+    );
+
+    createLineup(
+        "awayPlayers",
+        "away"
+    );
+
+
+    createBench(
+        "homeBench",
+        "home"
+    );
+
+    createBench(
+        "awayBench",
+        "away"
+    );
+
+
+    document
+    .getElementById("homeTeamTitle")
+    .textContent =
+    "🏠 " + homeTeam;
+
+
+    document
+    .getElementById("awayTeamTitle")
+    .textContent =
+    "✈️ " + awayTeam;
+
+
+    /* مخفی کردن مرحله اول */
+
+    document
+    .getElementById("step1")
+    .classList
+    .add("hidden");
+
+
+    /* نمایش مرحله دوم */
+
+    document
+    .getElementById("step2")
+    .classList
+    .remove("hidden");
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 
 });
 
 
+/* ======================================
+   ساخت ترکیب
+====================================== */
+
+function createLineup(containerId,type){
+
+    const box =
+        document
+        .getElementById(containerId);
+
+    box.innerHTML = "";
+
+
+    positions.forEach(function(position){
+
+        const div =
+            document.createElement("div");
+
+        div.className = "position";
+
+
+        div.innerHTML = `
+
+            <div class="position-title">
+                ${position}
+            </div>
+
+            <input
+                type="text"
+                class="player-input ${type}-starting-player"
+                placeholder="اسم بازیکن را بنویس"
+            >
+
+        `;
+
+
+        box.appendChild(div);
+
+    });
+
 }
 
 
-/* =====================================
+/* ======================================
    نیمکت
-===================================== */
+====================================== */
 
-function createBench(id,type){
+function createBench(containerId,type){
 
-const box=
-document.getElementById(id);
+    const box =
+        document
+        .getElementById(containerId);
 
-box.innerHTML="";
+    box.innerHTML = "";
 
 
-for(let i=0;i<5;i++){
+    for(
+        let i=1;
+        i<=5;
+        i++
+    ){
 
-const input=
-document.createElement("input");
+        const input =
+            document.createElement("input");
 
-input.type="text";
 
-input.className=
-`${type}-bench`;
+        input.type = "text";
 
-input.placeholder=
-`بازیکن نیمکت ${i+1}`;
+        input.className =
+            `${type}-bench-player`;
 
-input.style.marginBottom="8px";
+        input.placeholder =
+            "بازیکن نیمکت " + i;
 
-box.appendChild(input);
+        input.style.marginBottom =
+            "8px";
+
+
+        box.appendChild(input);
+
+    }
 
 }
 
-}
 
-
-/* =====================================
+/* ======================================
    گرفتن ترکیب
-===================================== */
+====================================== */
 
-function collectLineup(type){
+function readPlayers(type){
 
-const inputs=
-document.querySelectorAll(
-`.${type}-player`
-);
+    const inputs =
+        document.querySelectorAll(
+            `.${type}-starting-player`
+        );
 
-const team=
-type==="home"
-?homeTeamName
-:awayTeamName;
-
-const result=[];
+    const players = [];
 
 
-inputs.forEach((input,index)=>{
+    inputs.forEach(function(input,index){
 
-const name=
-input.value.trim();
-
-if(!name)return;
+        const name =
+            input.value.trim();
 
 
-const player=
-findPlayer(team,name);
+        if(name !== ""){
+
+            players.push({
+
+                name:name,
+
+                position:
+                    positions[index],
+
+                /*
+                اگر Overall واقعی از
+                بانک بازیکنان وصل شود،
+                این مقدار جایگزین می‌شود.
+                */
+
+                overall:75
+
+            });
+
+        }
+
+    });
 
 
-if(player){
+    return players;
 
-result.push({
+}
 
-...player,
 
-lineupPosition:
-positions[index]
+/* ======================================
+   گرفتن نیمکت
+====================================== */
+
+function readBench(type){
+
+    const inputs =
+        document.querySelectorAll(
+            `.${type}-bench-player`
+        );
+
+    const bench=[];
+
+
+    inputs.forEach(function(input){
+
+        const name =
+            input.value.trim();
+
+
+        if(name !== ""){
+
+            bench.push({
+
+                name:name,
+
+                overall:75
+
+            });
+
+        }
+
+    });
+
+
+    return bench;
+
+}
+
+
+/* ======================================
+   مرحله ۲
+====================================== */
+
+document
+.getElementById("nextTacticBtn")
+.addEventListener("click",function(){
+
+    homePlayers =
+        readPlayers("home");
+
+    awayPlayers =
+        readPlayers("away");
+
+
+    homeBench =
+        readBench("home");
+
+    awayBench =
+        readBench("away");
+
+
+    if(homePlayers.length !== 11){
+
+        document
+        .getElementById("lineupMessage")
+        .innerHTML =
+        '<div class="notice error">برای تیم میزبان دقیقاً ۱۱ بازیکن اصلی وارد کن.</div>';
+
+        return;
+
+    }
+
+
+    if(awayPlayers.length !== 11){
+
+        document
+        .getElementById("lineupMessage")
+        .innerHTML =
+        '<div class="notice error">برای تیم مهمان دقیقاً ۱۱ بازیکن اصلی وارد کن.</div>';
+
+        return;
+
+    }
+
+
+    document
+    .getElementById("homeTacticTitle")
+    .textContent =
+    "🏠 " + homeTeam;
+
+
+    document
+    .getElementById("awayTacticTitle")
+    .textContent =
+    "✈️ " + awayTeam;
+
+
+    document
+    .getElementById("step2")
+    .classList
+    .add("hidden");
+
+
+    document
+    .getElementById("step3")
+    .classList
+    .remove("hidden");
+
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 
 });
 
-}else{
 
-/*
-اگر بازیکن در بانک پیدا نشد،
-باز هم اجازه می‌دهیم اسم وارد شود.
-Overall پیش‌فرض 75 خواهد بود.
-*/
-
-result.push({
-
-name:name,
-
-overall:75,
-
-lineupPosition:
-positions[index]
-
-});
-
-}
-
-});
-
-
-return result;
-
-}
-
-
-function collectBench(type){
-
-const inputs=
-document.querySelectorAll(
-`.${type}-bench`
-);
-
-const team=
-type==="home"
-?homeTeamName
-:awayTeamName;
-
-const result=[];
-
-
-inputs.forEach(input=>{
-
-const name=
-input.value.trim();
-
-if(!name)return;
-
-
-const player=
-findPlayer(team,name);
-
-
-if(player){
-
-result.push(player);
-
-}else{
-
-result.push({
-name:name,
-overall:75
-});
-
-}
-
-});
-
-
-return result;
-
-}
-
-
-/* =====================================
-   مرحله ترکیب
-===================================== */
-
-function confirmLineup(){
-
-homeLineup=
-collectLineup("home");
-
-awayLineup=
-collectLineup("away");
-
-homeBench=
-collectBench("home");
-
-awayBench=
-collectBench("away");
-
-
-if(homeLineup.length!==11){
-
-showMessage(
-"lineupMsg",
-"برای تیم اول دقیقاً ۱۱ بازیکن اصلی وارد کن.",
-true
-);
-
-return;
-
-}
-
-
-if(awayLineup.length!==11){
-
-showMessage(
-"lineupMsg",
-"برای تیم دوم دقیقاً ۱۱ بازیکن اصلی وارد کن.",
-true
-);
-
-return;
-
-}
-
-
-document.getElementById(
-"tacticHomeName"
-).textContent=
-"🏠 "+homeTeamName;
-
-
-document.getElementById(
-"tacticAwayName"
-).textContent=
-"✈️ "+awayTeamName;
-
-
-document.getElementById("step2")
-.classList.add("hidden");
-
-document.getElementById("step3")
-.classList.remove("hidden");
-
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
-
-}
-
-
-/* =====================================
+/* ======================================
    Overall
-===================================== */
+====================================== */
 
 function getOverall(player){
 
-return Number(
-player.overall??
-player.OVR??
-player.rating??
-player.rate??
-75
-)||75;
+    return Number(
+        player.overall
+    ) || 75;
 
 }
 
 
 function average(players){
 
-if(!players.length)return 75;
-
-return players.reduce(
-(sum,p)=>sum+getOverall(p),
-0
-)/players.length;
-
-}
+    if(players.length===0)
+        return 75;
 
 
-function tacticBonus(tactic){
+    let total=0;
 
-const values={
-attacking:4,
-defensive:1,
-possession:3,
-counter:3,
-pressing:2,
-balanced:0
-};
 
-return values[tactic]||0;
+    players.forEach(function(player){
+
+        total +=
+            getOverall(player);
+
+    });
+
+
+    return total / players.length;
 
 }
 
 
-/* =====================================
-   شبیه‌سازی
-===================================== */
+/* ======================================
+   تأثیر تاکتیک
+====================================== */
 
-function simulate(){
+function tacticPower(tactic){
 
-const homeTactic=
-document.getElementById(
-"homeTactic"
-).value;
+    const power={
 
-const awayTactic=
-document.getElementById(
-"awayTactic"
-).value;
+        balanced:0,
 
+        attacking:5,
 
-const homePower=
-average(homeLineup)
-+tacticBonus(homeTactic)
-+3;
+        defensive:2,
 
+        possession:4,
 
-const awayPower=
-average(awayLineup)
-+tacticBonus(awayTactic);
+        counter:4,
+
+        pressing:3
+
+    };
 
 
-const homeAttack=
-homePower+
-Math.random()*15;
-
-
-const awayAttack=
-awayPower+
-Math.random()*15;
-
-
-let homeGoals=
-Math.round(
-Math.max(
-0,
-(homeAttack-67)/8+
-Math.random()*2
-)
-);
-
-
-let awayGoals=
-Math.round(
-Math.max(
-0,
-(awayAttack-67)/8+
-Math.random()*2
-)
-);
-
-
-homeGoals=
-Math.min(7,homeGoals);
-
-awayGoals=
-Math.min(7,awayGoals);
-
-
-const goals=[];
-
-
-function randomPlayer(list){
-
-return list[
-Math.floor(
-Math.random()*list.length
-)
-];
+    return power[tactic] || 0;
 
 }
 
 
-for(let i=0;i<homeGoals;i++){
+/* ======================================
+   بازیکن تصادفی
+====================================== */
 
-const player=
-randomPlayer(homeLineup);
+function randomPlayer(players){
 
-goals.push({
-
-minute:
-5+Math.floor(Math.random()*86),
-
-player:player.name||
-player.player||
-"بازیکن",
-
-team:homeTeamName
-
-});
+    return players[
+        Math.floor(
+            Math.random()*players.length
+        )
+    ];
 
 }
 
 
-for(let i=0;i<awayGoals;i++){
-
-const player=
-randomPlayer(awayLineup);
-
-goals.push({
-
-minute:
-5+Math.floor(Math.random()*86),
-
-player:player.name||
-player.player||
-"بازیکن",
-
-team:awayTeamName
-
-});
-
-}
-
-
-goals.sort(
-(a,b)=>a.minute-b.minute
-);
-
-
-let possession=
-Math.round(
-50+
-(homePower-awayPower)*0.8
-);
-
-possession=
-Math.max(
-30,
-Math.min(70,possession)
-);
-
-
-return{
-
-homeGoals:homeGoals,
-awayGoals:awayGoals,
-
-goals:goals,
-
-yellow:[],
-
-red:[],
-
-subs:[],
-
-mvp:
-homePower>=awayPower
-?randomPlayer(homeLineup)
-:randomPlayer(awayLineup),
-
-stats:{
-
-homePossession:possession+"%",
-
-awayPossession:
-(100-possession)+"%",
-
-homeShots:
-8+
-homeGoals*3+
-Math.floor(Math.random()*8),
-
-awayShots:
-8+
-awayGoals*3+
-Math.floor(Math.random()*8),
-
-homeShotsOnTarget:
-3+
-homeGoals+
-Math.floor(Math.random()*4),
-
-awayShotsOnTarget:
-3+
-awayGoals+
-Math.floor(Math.random()*4),
-
-homeCorners:
-2+Math.floor(Math.random()*7),
-
-awayCorners:
-2+Math.floor(Math.random()*7),
-
-homeFouls:
-5+Math.floor(Math.random()*9),
-
-awayFouls:
-5+Math.floor(Math.random()*9),
-
-homeOffsides:
-Math.floor(Math.random()*4),
-
-awayOffsides:
-Math.floor(Math.random()*4)
-
-}
-
-};
-
-}
-
-
-/* =====================================
+/* ======================================
    شروع مسابقه
-===================================== */
+====================================== */
 
-function startMatch(){
+document
+.getElementById("startMatchBtn")
+.addEventListener("click",function(){
 
-if(homeLineup.length!==11||
-awayLineup.length!==11){
+    if(
+        homePlayers.length !== 11 ||
+        awayPlayers.length !== 11
+    ){
 
-showMessage(
-"startMsg",
-"ابتدا ترکیب هر دو تیم را کامل کن.",
-true
-);
+        alert(
+            "ابتدا ترکیب هر دو تیم را کامل کن."
+        );
 
-return;
+        return;
 
-}
+    }
 
 
-const result=
-simulate();
+    const homeTactic =
+        document
+        .getElementById("homeTactic")
+        .value;
 
 
-showResult(result);
+    const awayTactic =
+        document
+        .getElementById("awayTactic")
+        .value;
 
-}
 
+    /* قدرت واقعی ترکیب */
 
-/* =====================================
-   نمایش نتیجه
-===================================== */
+    let homePower =
+        average(homePlayers)
+        +
+        tacticPower(homeTactic)
+        +
+        3;
 
-function showResult(result){
 
-document.getElementById("step3")
-.classList.add("hidden");
+    let awayPower =
+        average(awayPlayers)
+        +
+        tacticPower(awayTactic);
 
-document.getElementById("result")
-.classList.remove("hidden");
 
+    /*
+    اختلاف قدرت روی شانس گل
+    تأثیر می‌گذارد.
+    */
 
-document.getElementById("resultTeams")
-.textContent=
-homeTeamName+
-" 🆚 "+
-awayTeamName;
+    let homeChance =
+        (homePower-65)/8
+        +
+        Math.random()*2;
 
 
-document.getElementById("score")
-.textContent=
-result.homeGoals+
-" - "+
-result.awayGoals;
+    let awayChance =
+        (awayPower-65)/8
+        +
+        Math.random()*2;
 
 
-renderEvents(
-"goals",
-result.goals,
-"⚽"
-);
+    let homeGoals =
+        Math.max(
+            0,
+            Math.round(homeChance)
+        );
 
-renderEvents(
-"yellow",
-result.yellow,
-"🟨"
-);
 
-renderEvents(
-"red",
-result.red,
-"🟥"
-);
+    let awayGoals =
+        Math.max(
+            0,
+            Math.round(awayChance)
+        );
 
-renderEvents(
-"subs",
-result.subs,
-"🔄"
-);
 
-renderStats(result.stats);
+    homeGoals =
+        Math.min(7,homeGoals);
 
+    awayGoals =
+        Math.min(7,awayGoals);
 
-const mvp=result.mvp;
 
+    /* گل‌ها */
 
-document.getElementById("mvp")
-.innerHTML=
-`
-<div class="event">
-⭐ ${
-mvp.name||
-mvp.player||
-"بازیکن"
-}
-</div>
-`;
+    const goals=[];
 
 
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
+    for(
+        let i=0;
+        i<homeGoals;
+        i++
+    ){
 
-}
+        const player =
+            randomPlayer(homePlayers);
 
 
-/* =====================================
-   رویدادها
-===================================== */
+        goals.push({
 
-function renderEvents(id,events,icon){
+            minute:
+                5+
+                Math.floor(
+                    Math.random()*86
+                ),
 
-const box=
-document.getElementById(id);
+            player:
+                player.name,
 
-box.innerHTML="";
+            team:
+                homeTeam
 
+        });
 
-if(!events||!events.length){
+    }
 
-box.innerHTML=
-`<div class="event">
-موردی ثبت نشده.
-</div>`;
 
-return;
+    for(
+        let i=0;
+        i<awayGoals;
+        i++
+    ){
 
-}
+        const player =
+            randomPlayer(awayPlayers);
 
 
-events.forEach(event=>{
+        goals.push({
 
-const name=
-event.player||
-event.name||
-"بازیکن";
+            minute:
+                5+
+                Math.floor(
+                    Math.random()*86
+                ),
 
-const minute=
-event.minute||
-"—";
+            player:
+                player.name,
 
-const team=
-event.team
-?` — ${event.team}`
-:"";
+            team:
+                awayTeam
 
+        });
 
-const div=
-document.createElement("div");
+    }
 
-div.className="event";
 
-div.textContent=
-`${icon} دقیقه ${minute} — ${name}${team}`;
+    goals.sort(
+        function(a,b){
+            return a.minute-b.minute;
+        }
+    );
 
-box.appendChild(div);
 
-});
+    /* مالکیت */
 
-}
+    let possession =
+        Math.round(
+            50+
+            (homePower-awayPower)*0.7
+        );
 
 
-/* =====================================
-   آمار
-===================================== */
+    possession =
+        Math.max(
+            30,
+            Math.min(70,possession)
+        );
 
-function renderStats(stats){
 
-const box=
-document.getElementById("stats");
+    /* آمار */
 
-box.innerHTML="";
+    const stats={
 
+        homePossession:
+            possession+"%",
 
-const data=[
+        awayPossession:
+            (100-possession)+"%",
 
-["مالکیت میزبان",
-stats.homePossession],
+        homeShots:
+            7+
+            homeGoals*2+
+            Math.floor(Math.random()*8),
 
-["مالکیت مهمان",
-stats.awayPossession],
+        awayShots:
+            7+
+            awayGoals*2+
+            Math.floor(Math.random()*8),
 
-["شوت میزبان",
-stats.homeShots],
+        homeShotsOnTarget:
+            2+
+            homeGoals+
+            Math.floor(Math.random()*5),
 
-["شوت مهمان",
-stats.awayShots],
+        awayShotsOnTarget:
+            2+
+            awayGoals+
+            Math.floor(Math.random()*5),
 
-["شوت در چارچوب میزبان",
-stats.homeShotsOnTarget],
+        homeCorners:
+            2+
+            Math.floor(Math.random()*7),
 
-["شوت در چارچوب مهمان",
-stats.awayShotsOnTarget],
+        awayCorners:
+            2+
+            Math.floor(Math.random()*7),
 
-["کرنر میزبان",
-stats.homeCorners],
+        homeFouls:
+            5+
+            Math.floor(Math.random()*10),
 
-["کرنر مهمان",
-stats.awayCorners],
+        awayFouls:
+            5+
+            Math.floor(Math.random()*10),
 
-["خطای میزبان",
-stats.homeFouls],
+        homeOffsides:
+            Math.floor(Math.random()*4),
 
-["خطای مهمان",
-stats.awayFouls],
+        awayOffsides:
+            Math.floor(Math.random()*4)
 
-["آفساید میزبان",
-stats.homeOffsides],
+    };
 
-["آفساید مهمان",
-stats.awayOffsides]
 
-];
+    /* کارت زرد */
 
+    const yellow=[];
 
-data.forEach(item=>{
 
-const div=
-document.createElement("div");
+    if(Math.random()<0.75){
 
-div.className="stat";
+        const p =
+            randomPlayer(homePlayers);
 
-div.innerHTML=
-`
-${item[0]}
-<b>${item[1]}</b>
-`;
+        yellow.push({
 
-box.appendChild(div);
+            minute:
+                15+
+                Math.floor(Math.random()*70),
 
-});
+            player:p.name,
 
-}
+            team:homeTeam
 
+        });
 
-/* =====================================
-   دانلود تصویر
-===================================== */
+    }
 
-function downloadResult(){
 
-const canvas=
-document.createElement("canvas");
+    if(Math.random()<0.75){
 
-canvas.width=1000;
-canvas.height=1200;
+        const p =
+            randomPlayer(awayPlayers);
 
-const ctx=
-canvas.getContext("2d");
+        yellow.push({
 
+            minute:
+                15+
+                Math.floor(Math.random()*70),
 
-ctx.fillStyle="#070b12";
+            player:p.name,
 
-ctx.fillRect(
-0,
-0,
-1000,
-1200
-);
+            team:awayTeam
 
+        });
 
-ctx.fillStyle="#fff";
+    }
 
-ctx.textAlign="center";
 
-ctx.font="bold 34px Arial";
+    /* کارت قرمز */
 
-ctx.fillText(
-"⚽ لیگ مجازی مربیان",
-500,
-60
-);
+    const red=[];
 
 
-ctx.font="25px Arial";
+    if(Math.random()<0.08){
 
-ctx.fillText(
-homeTeamName+
-"  "+ 
-document.getElementById("score").textContent+
-"  "+
-awayTeamName,
-500,
-120
-);
+        const p =
+            randomPlayer(homePlayers);
 
+        red.push({
 
-ctx.textAlign="right";
+            minute:
+                20+
+                Math.floor(Math.random()*60),
 
-ctx.font="20px Arial";
+            player:p.name,
 
+            team:homeTeam
 
-let text=
-document.getElementById("goals").innerText+
-"\n\n"+
-document.getElementById("yellow").innerText+
-"\n\n"+
-document.getElementById("red").innerText+
-"\n\n"+
-document.getElementById("stats").innerText;
+        });
 
+    }
 
-let y=180;
 
+    if(Math.random()<0.08){
 
-text.split("\n").forEach(line=>{
+        const p =
+            randomPlayer(awayPlayers);
 
-if(y<1160){
+        red.push({
 
-ctx.fillText(
-line.substring(0,75),
-950,
-y
-);
+            minute:
+                20+
+                Math.floor(Math.random()*60),
 
-y+=30;
+            player:p.name,
 
-}
+            team:awayTeam
 
-});
+        });
 
+    }
 
-const link=
-document.createElement("a");
 
-link.download=
-"league-match-result.png";
+    /* تعویض */
 
-link.href=
-canvas.toDataURL("image/png");
+    const substitutions=[];
 
-link.click();
 
-}
+    if(homeBench.length>0){
 
+        substitutions.push({
 
-/* =====================================
-   اتصال دکمه‌ها
-===================================== */
+            minute:
+                55+
+                Math.floor(Math.random()*30),
 
-document.getElementById(
-"continueBtn"
-).addEventListener(
-"click",
-goNext
-);
+            team:homeTeam,
 
+            player:
+                randomPlayer(homeBench).name
 
-document.getElementById(
-"lineupBtn"
-).addEventListener(
-"click",
-confirm
+        });
+
+    }
+
+
+    if(awayBench.length>0){
+
+        substitutions.push({
+
+            minute:
+                55+
+                Math.floor(Math.random()*30),
+
+            team:awayTeam,
+
+            player:
+                randomPlayer(awayBench).name
+
+        });
+
+    }
+
+
+    /* بهترین بازیکن */
+
+    const mvp =
+        homePower >= awayPower
+        ? randomPlayer(homePlayers)
+        : randomPlayer(awayPlayers);
+
+
+    showResult({
+
+        homeGoals:homeGoals,
+
+        awayGoals:awayGoals,
+
+        goals:goals,
+
+        yellow:yellow,
+
+        red:red,
+
+        substitutions:
+            substitutions,
+
+        stats:stats,
+
+       
