@@ -3,151 +3,214 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>لیگ مجازی مربیان</title>
+
+<title>لیگ مجازی مربیان | شبیه‌ساز</title>
 
 <style>
-*{box-sizing:border-box}
+*{
+    box-sizing:border-box;
+}
 
 body{
     margin:0;
-    background:#070b12;
-    color:#fff;
     font-family:Tahoma,Arial,sans-serif;
+    background:
+        radial-gradient(circle at top,#202020 0,#080808 45%,#030303 100%);
+    color:#fff;
 }
 
 .container{
-    width:94%;
-    max-width:1100px;
-    margin:20px auto;
+    width:min(1100px,94%);
+    margin:auto;
+    padding:25px 0 60px;
+}
+
+.header{
+    text-align:center;
+    padding:28px 15px;
+    border:1px solid #303030;
+    background:rgba(15,15,15,.95);
+    border-radius:22px;
+    margin-bottom:20px;
+}
+
+.header h1{
+    margin:0;
+    font-size:30px;
+}
+
+.header p{
+    color:#aaa;
+    margin:10px 0 0;
+}
+
+.teams{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
 }
 
 .card{
-    background:#111827;
-    border:1px solid #293548;
-    border-radius:18px;
+    background:#111;
+    border:1px solid #2c2c2c;
+    border-radius:20px;
     padding:20px;
-    margin-bottom:18px;
 }
 
-h1,h2,h3{
+.card h2{
     margin-top:0;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:16px;
-}
-
-@media(max-width:700px){
-    .grid{
-        grid-template-columns:1fr;
-    }
 }
 
 label{
     display:block;
-    margin:10px 0 7px;
-    color:#cbd5e1;
+    color:#aaa;
+    font-size:14px;
+    margin:14px 0 7px;
 }
 
-input,select,button{
+input,
+select,
+textarea{
     width:100%;
-    padding:14px;
-    border-radius:10px;
-    border:1px solid #374151;
-    background:#0b111b;
-    color:white;
-    font-size:15px;
+    padding:13px;
+    border-radius:12px;
+    border:1px solid #363636;
+    background:#080808;
+    color:#fff;
+    outline:none;
+    font-family:inherit;
+}
+
+textarea{
+    height:250px;
+    resize:vertical;
+    line-height:2;
 }
 
 button{
-    background:#2563eb;
     border:0;
+    border-radius:13px;
+    padding:15px;
+    font-family:inherit;
     font-weight:bold;
     cursor:pointer;
-    margin-top:12px;
 }
 
-button:active{
-    transform:scale(.98);
+.mainBtn{
+    width:100%;
+    margin-top:18px;
+    background:#fff;
+    color:#000;
+    font-size:17px;
 }
 
-.hidden{
-    display:none !important;
+.mainBtn:hover{
+    background:#ddd;
 }
 
-.notice{
-    padding:12px;
-    border-radius:10px;
-    background:#172033;
-    margin:12px 0;
+.result{
+    display:none;
+    margin-top:20px;
 }
 
-.error{
-    background:#3a1115;
-    color:#fecaca;
+.scoreBox{
+    text-align:center;
+    background:#111;
+    border:1px solid #333;
+    border-radius:20px;
+    padding:25px;
 }
 
-.team-title{
+.teamNames{
     font-size:20px;
     font-weight:bold;
-    margin-bottom:15px;
-}
-
-.position{
-    background:#0b111b;
-    border-radius:12px;
-    padding:12px;
-    margin-bottom:9px;
-}
-
-.position-title{
-    color:#94a3b8;
-    font-size:13px;
-    margin-bottom:7px;
-}
-
-.player-input{
-    margin:0;
 }
 
 .score{
-    text-align:center;
     font-size:55px;
-    font-weight:bold;
-    margin:20px 0;
+    font-weight:900;
+    margin:12px 0;
 }
 
-.teams{
-    text-align:center;
-    font-size:21px;
+.winner{
+    color:#bbb;
 }
 
-.stats{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-    gap:10px;
+.section{
+    background:#111;
+    border:1px solid #2c2c2c;
+    border-radius:18px;
+    padding:18px;
+    margin-top:15px;
+}
+
+.section h3{
+    margin-top:0;
 }
 
 .stat{
-    background:#0b111b;
-    padding:14px;
-    border-radius:10px;
-    text-align:center;
+    display:grid;
+    grid-template-columns:1fr 90px 1fr;
+    gap:10px;
+    align-items:center;
+    padding:12px 0;
+    border-bottom:1px solid #252525;
 }
 
-.stat b{
-    display:block;
-    font-size:20px;
-    margin-top:6px;
+.stat:last-child{
+    border-bottom:0;
+}
+
+.stat div:nth-child(2){
+    text-align:center;
+    color:#aaa;
+    font-size:13px;
+}
+
+.stat div:last-child{
+    text-align:left;
 }
 
 .event{
-    background:#0b111b;
+    background:#090909;
+    border:1px solid #242424;
+    border-radius:12px;
     padding:11px;
-    border-radius:9px;
-    margin:7px 0;
+    margin:8px 0;
+}
+
+.two{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.reset{
+    width:100%;
+    margin-top:18px;
+    background:#292929;
+    color:#fff;
+}
+
+.info{
+    color:#999;
+    font-size:12px;
+    line-height:1.9;
+}
+
+@media(max-width:700px){
+    .teams,
+    .two{
+        grid-template-columns:1fr;
+    }
+
+    .header h1{
+        font-size:24px;
+    }
+
+    .score{
+        font-size:45px;
+    }
 }
 </style>
 </head>
@@ -156,892 +219,863 @@ button:active{
 
 <div class="container">
 
-<!-- ========================= -->
-<!-- صفحه اصلی -->
-<!-- ========================= -->
+<div class="header">
+    <h1>🏆 لیگ مجازی مربیان</h1>
+    <p>⚽ سیستم شبیه‌سازی مسابقه</p>
+</div>
+
+<div class="teams">
 
 <div class="card">
-    <h1>⚽ لیگ مجازی مربیان</h1>
-    <p>شبیه‌ساز مسابقه فوتبال</p>
+
+<h2>🔴 تیم اول</h2>
+
+<label>نام تیم</label>
+<input id="team1" placeholder="مثلاً رئال مادرید">
+
+<label>تاکتیک</label>
+
+<select id="tactic1">
+    <option value="balanced">⚖️ متعادل</option>
+    <option value="attacking">⚔️ هجومی</option>
+    <option value="defensive">🛡️ دفاعی</option>
+    <option value="counter">⚡ ضدحمله</option>
+    <option value="pressing">🔥 پرس شدید</option>
+</select>
+
+<label>بازیکنان</label>
+
+<textarea id="players1"
+placeholder="هر بازیکن را در یک خط وارد کن
+
+مثال:
+Kylian Mbappe
+Vinicius Junior
+Jude Bellingham
+Federico Valverde
+Antonio Rudiger"></textarea>
+
 </div>
 
 
-<!-- ========================= -->
-<!-- مرحله ۱ -->
-<!-- ========================= -->
+<div class="card">
 
-<section id="step1" class="card">
+<h2>🔵 تیم دوم</h2>
 
-    <h2>🏟️ شروع مسابقه</h2>
+<label>نام تیم</label>
+<input id="team2" placeholder="مثلاً بارسلونا">
 
-    <div class="grid">
+<label>تاکتیک</label>
 
-        <div>
-            <label>🏠 تیم میزبان</label>
+<select id="tactic2">
+    <option value="balanced">⚖️ متعادل</option>
+    <option value="attacking">⚔️ هجومی</option>
+    <option value="defensive">🛡️ دفاعی</option>
+    <option value="counter">⚡ ضدحمله</option>
+    <option value="pressing">🔥 پرس شدید</option>
+</select>
 
-            <input
-                id="homeTeam"
-                type="text"
-                placeholder="نام تیم میزبان"
-            >
-        </div>
+<label>بازیکنان</label>
 
-        <div>
-            <label>✈️ تیم مهمان</label>
+<textarea id="players2"
+placeholder="هر بازیکن را در یک خط وارد کن"></textarea>
 
-            <input
-                id="awayTeam"
-                type="text"
-                placeholder="نام تیم مهمان"
-            >
-        </div>
+</div>
 
-    </div>
+</div>
 
-    <button type="button" id="nextStepBtn">
-        ادامه ➜
-    </button>
+<button class="mainBtn" onclick="simulate()">
+🎮 شروع شبیه‌سازی مسابقه
+</button>
 
-    <div id="step1Message"></div>
-
-</section>
-
-
-<!-- ========================= -->
-<!-- مرحله ۲ -->
-<!-- ========================= -->
-
-<section id="step2" class="card hidden">
-
-    <h2>👥 ترکیب تیم‌ها</h2>
-
-    <div class="notice">
-        اسم بازیکنان را خودت تایپ کن.
-        نیازی به کلیک روی بازیکن نیست.
-    </div>
-
-
-    <div class="grid">
-
-        <!-- تیم میزبان -->
-
-        <div>
-
-            <div
-                id="homeTeamTitle"
-                class="team-title">
-                🏠 تیم میزبان
-            </div>
-
-            <label>آرایش</label>
-
-            <select id="homeFormation">
-                <option>4-3-3</option>
-                <option>4-2-3-1</option>
-                <option>4-4-2</option>
-                <option>3-5-2</option>
-                <option>5-3-2</option>
-            </select>
-
-            <div id="homePlayers"></div>
-
-            <h3>🪑 نیمکت</h3>
-
-            <div id="homeBench"></div>
-
-        </div>
-
-
-        <!-- تیم مهمان -->
-
-        <div>
-
-            <div
-                id="awayTeamTitle"
-                class="team-title">
-                ✈️ تیم مهمان
-            </div>
-
-            <label>آرایش</label>
-
-            <select id="awayFormation">
-                <option>4-3-3</option>
-                <option>4-2-3-1</option>
-                <option>4-4-2</option>
-                <option>3-5-2</option>
-                <option>5-3-2</option>
-            </select>
-
-            <div id="awayPlayers"></div>
-
-            <h3>🪑 نیمکت</h3>
-
-            <div id="awayBench"></div>
-
-        </div>
-
-    </div>
-
-
-    <button
-        type="button"
-        id="nextTacticBtn">
-        تأیید ترکیب و مرحله بعد ➜
-    </button>
-
-    <div id="lineupMessage"></div>
-
-</section>
-
-
-<!-- ========================= -->
-<!-- مرحله ۳ -->
-<!-- ========================= -->
-
-<section id="step3" class="card hidden">
-
-    <h2>🎯 تاکتیک</h2>
-
-    <div class="grid">
-
-        <div>
-
-            <h3 id="homeTacticTitle"></h3>
-
-            <label>تاکتیک</label>
-
-            <select id="homeTactic">
-
-                <option value="balanced">
-                    ⚖️ متعادل
-                </option>
-
-                <option value="attacking">
-                    🔥 هجومی
-                </option>
-
-                <option value="defensive">
-                    🛡️ دفاعی
-                </option>
-
-                <option value="possession">
-                    🎯 مالکیت توپ
-                </option>
-
-                <option value="counter">
-                    ⚡ ضدحمله
-                </option>
-
-                <option value="pressing">
-                    💨 پرس شدید
-                </option>
-
-            </select>
-
-        </div>
-
-
-        <div>
-
-            <h3 id="awayTacticTitle"></h3>
-
-            <label>تاکتیک</label>
-
-            <select id="awayTactic">
-
-                <option value="balanced">
-                    ⚖️ متعادل
-                </option>
-
-                <option value="attacking">
-                    🔥 هجومی
-                </option>
-
-                <option value="defensive">
-                    🛡️ دفاعی
-                </option>
-
-                <option value="possession">
-                    🎯 مالکیت توپ
-                </option>
-
-                <option value="counter">
-                    ⚡ ضدحمله
-                </option>
-
-                <option value="pressing">
-                    💨 پرس شدید
-                </option>
-
-            </select>
-
-        </div>
-
-    </div>
-
-
-    <button
-        type="button"
-        id="startMatchBtn">
-        ⚽ شروع مسابقه
-    </button>
-
-</section>
-
-
-<!-- ========================= -->
-<!-- نتیجه -->
-<!-- ========================= -->
-
-<section id="result" class="card hidden">
-
-    <h2>🏆 نتیجه مسابقه</h2>
-
-    <div
-        id="resultTeams"
-        class="teams">
-    </div>
-
-    <div
-        id="resultScore"
-        class="score">
-    </div>
-
-
-    <h3>⚽ گلزنان</h3>
-    <div id="goals"></div>
-
-
-    <h3>🟨 کارت زرد</h3>
-    <div id="yellowCards"></div>
-
-
-    <h3>🟥 کارت قرمز</h3>
-    <div id="redCards"></div>
-
-
-    <h3>🔄 تعویض‌ها</h3>
-    <div id="substitutions"></div>
-
-
-    <h3>📊 آمار بازی</h3>
-    <div id="matchStats" class="stats"></div>
-
-
-    <h3>⭐ بهترین بازیکن</h3>
-    <div id="mvp"></div>
-
-
-    <button
-        type="button"
-        id="downloadBtn">
-        📥 دانلود تصویر نتیجه
-    </button>
-
-</section>
+<div id="result" class="result"></div>
 
 </div>
 
 
 <script>
 
-/* ======================================
-   متغیرها
-====================================== */
+/* =========================
+   دیتابیس بازیکنان
+========================= */
 
-let homeTeam = "";
-let awayTeam = "";
+const PLAYERS = {
 
-let homePlayers = [];
-let awayPlayers = [];
+"messi":{
+    name:"لیونل مسی",
+    power:97,
+    attack:99,
+    midfield:96,
+    defense:45,
+    position:"FW"
+},
 
-let homeBench = [];
-let awayBench = [];
+"lionel messi":{
+    name:"لیونل مسی",
+    power:97,
+    attack:99,
+    midfield:96,
+    defense:45,
+    position:"FW"
+},
+
+"mbappe":{
+    name:"کیلیان امباپه",
+    power:96,
+    attack:99,
+    midfield:82,
+    defense:42,
+    position:"FW"
+},
+
+"kylian mbappe":{
+    name:"کیلیان امباپه",
+    power:96,
+    attack:99,
+    midfield:82,
+    defense:42,
+    position:"FW"
+},
+
+"vinicius junior":{
+    name:"وینیسیوس جونیور",
+    power:95,
+    attack:98,
+    midfield:84,
+    defense:40,
+    position:"FW"
+},
+
+"vini":{
+    name:"وینیسیوس جونیور",
+    power:95,
+    attack:98,
+    midfield:84,
+    defense:40,
+    position:"FW"
+},
+
+"bellingham":{
+    name:"جود بلینگام",
+    power:95,
+    attack:91,
+    midfield:97,
+    defense:76,
+    position:"MF"
+},
+
+"jude bellingham":{
+    name:"جود بلینگام",
+    power:95,
+    attack:91,
+    midfield:97,
+    defense:76,
+    position:"MF"
+},
+
+"valverde":{
+    name:"فدریکو والورده",
+    power:91,
+    attack:83,
+    midfield:92,
+    defense:78,
+    position:"MF"
+},
+
+"rodri":{
+    name:"رودری",
+    power:96,
+    attack:78,
+    midfield:98,
+    defense:91,
+    position:"MF"
+},
+
+"de bruyne":{
+    name:"کوین دی‌بروینه",
+    power:94,
+    attack:90,
+    midfield:97,
+    defense:55,
+    position:"MF"
+},
+
+"kevin de bruyne":{
+    name:"کوین دی‌بروینه",
+    power:94,
+    attack:90,
+    midfield:97,
+    defense:55,
+    position:"MF"
+},
+
+"ronaldo":{
+    name:"کریستیانو رونالدو",
+    power:96,
+    attack:99,
+    midfield:78,
+    defense:38,
+    position:"FW"
+},
+
+"cristiano ronaldo":{
+    name:"کریستیانو رونالدو",
+    power:96,
+    attack:99,
+    midfield:78,
+    defense:38,
+    position:"FW"
+},
+
+"haaland":{
+    name:"ارلینگ هالند",
+    power:96,
+    attack:99,
+    midfield:68,
+    defense:40,
+    position:"FW"
+},
+
+"harry kane":{
+    name:"هری کین",
+    power:94,
+    attack:96,
+    midfield:84,
+    defense:42,
+    position:"FW"
+},
+
+"neymar":{
+    name:"نیمار",
+    power:93,
+    attack:96,
+    midfield:91,
+    defense:35,
+    position:"FW"
+},
+
+"modric":{
+    name:"لوکا مودریچ",
+    power:90,
+    attack:76,
+    midfield:96,
+    defense:62,
+    position:"MF"
+},
+
+"toni kroos":{
+    name:"تونی کروس",
+    power:91,
+    attack:72,
+    midfield:98,
+    defense:65,
+    position:"MF"
+},
+
+"van dijk":{
+    name:"ویرجیل فن‌دایک",
+    power:92,
+    attack:45,
+    midfield:61,
+    defense:99,
+    position:"DF"
+},
+
+"ramos":{
+    name:"سرخیو راموس",
+    power:88,
+    attack:53,
+    midfield:55,
+    defense:94,
+    position:"DF"
+},
+
+"rudiger":{
+    name:"آنتونیو رودیگر",
+    power:89,
+    attack:38,
+    midfield:55,
+    defense:94,
+    position:"DF"
+},
+
+"courtois":{
+    name:"تیبو کورتوا",
+    power:92,
+    attack:10,
+    midfield:35,
+    defense:99,
+    position:"GK"
+},
+
+"alisson":{
+    name:"آلیسون بکر",
+    power:91,
+    attack:10,
+    midfield:38,
+    defense:97,
+    position:"GK"
+},
+
+"zidane":{
+    name:"زین‌الدین زیدان",
+    power:96,
+    attack:94,
+    midfield:99,
+    defense:50,
+    position:"MF"
+},
+
+"xavi":{
+    name:"ژاوی",
+    power:94,
+    attack:70,
+    midfield:99,
+    defense:62,
+    position:"MF"
+},
+
+"iniesta":{
+    name:"آندرس اینیستا",
+    power:95,
+    attack:86,
+    midfield:99,
+    defense:45,
+    position:"MF"
+},
+
+"pirlo":{
+    name:"آندره‌آ پیرلو",
+    power:93,
+    attack:65,
+    midfield:99,
+    defense:67,
+    position:"MF"
+},
+
+"gerrard":{
+    name:"استیون جرارد",
+    power:91,
+    attack:88,
+    midfield:94,
+    defense:72,
+    position:"MF"
+},
+
+"lampard":{
+    name:"فرانک لمپارد",
+    power:91,
+    attack:91,
+    midfield:92,
+    defense:65,
+    position:"MF"
+},
+
+"gullit":{
+    name:"رود گولیت",
+    power:94,
+    attack:91,
+    midfield:94,
+    defense:78,
+    position:"MF"
+},
+
+"matthaus":{
+    name:"لوتار ماتئوس",
+    power:94,
+    attack:82,
+    midfield:94,
+    defense:88,
+    position:"MF"
+}
+
+};
 
 
-/* ======================================
-   پست‌های اصلی
-====================================== */
+/* =========================
+   نام بازیکن
+========================= */
 
-const positions = [
+function normalize(name){
 
-    "دروازه‌بان",
+    return name
+        .toLowerCase()
+        .trim()
+        .replace(/ي/g,"ی")
+        .replace(/ك/g,"ک")
+        .replace(/\s+/g," ");
 
-    "دفاع راست",
-
-    "مدافع وسط ۱",
-
-    "مدافع وسط ۲",
-
-    "دفاع چپ",
-
-    "هافبک دفاعی",
-
-    "هافبک مرکزی",
-
-    "هافبک هجومی",
-
-    "وینگر راست",
-
-    "مهاجم",
-
-    "وینگر چپ"
-
-];
+}
 
 
-/* ======================================
-   مرحله ۱
-====================================== */
+/* =========================
+   گرفتن اطلاعات بازیکن
+========================= */
 
-document
-.getElementById("nextStepBtn")
-.addEventListener("click", function(){
+function getPlayer(name){
 
-    homeTeam =
-        document
-        .getElementById("homeTeam")
-        .value
-        .trim();
+    const key=normalize(name);
 
-    awayTeam =
-        document
-        .getElementById("awayTeam")
-        .value
-        .trim();
-
-
-    if(homeTeam === "" || awayTeam === ""){
-
-        document
-        .getElementById("step1Message")
-        .innerHTML =
-        '<div class="notice error">اول اسم هر دو تیم را وارد کن.</div>';
-
-        return;
+    if(PLAYERS[key]){
+        return PLAYERS[key];
     }
 
+    /*
+    بازیکن ناشناخته:
+    قدرت متوسط.
+    در نسخه API این بخش
+    با اطلاعات واقعی جایگزین می‌شود.
+    */
 
-    if(
-        homeTeam.toLowerCase() ===
-        awayTeam.toLowerCase()
-    ){
-
-        document
-        .getElementById("step1Message")
-        .innerHTML =
-        '<div class="notice error">دو تیم نمی‌توانند یکسان باشند.</div>';
-
-        return;
-    }
-
-
-    /* ساخت ترکیب */
-
-    createLineup(
-        "homePlayers",
-        "home"
-    );
-
-    createLineup(
-        "awayPlayers",
-        "away"
-    );
-
-
-    createBench(
-        "homeBench",
-        "home"
-    );
-
-    createBench(
-        "awayBench",
-        "away"
-    );
-
-
-    document
-    .getElementById("homeTeamTitle")
-    .textContent =
-    "🏠 " + homeTeam;
-
-
-    document
-    .getElementById("awayTeamTitle")
-    .textContent =
-    "✈️ " + awayTeam;
-
-
-    /* مخفی کردن مرحله اول */
-
-    document
-    .getElementById("step1")
-    .classList
-    .add("hidden");
-
-
-    /* نمایش مرحله دوم */
-
-    document
-    .getElementById("step2")
-    .classList
-    .remove("hidden");
-
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-
-});
-
-
-/* ======================================
-   ساخت ترکیب
-====================================== */
-
-function createLineup(containerId,type){
-
-    const box =
-        document
-        .getElementById(containerId);
-
-    box.innerHTML = "";
-
-
-    positions.forEach(function(position){
-
-        const div =
-            document.createElement("div");
-
-        div.className = "position";
-
-
-        div.innerHTML = `
-
-            <div class="position-title">
-                ${position}
-            </div>
-
-            <input
-                type="text"
-                class="player-input ${type}-starting-player"
-                placeholder="اسم بازیکن را بنویس"
-            >
-
-        `;
-
-
-        box.appendChild(div);
-
-    });
+    return {
+        name:name,
+        power:72,
+        attack:72,
+        midfield:72,
+        defense:72,
+        position:"MF"
+    };
 
 }
 
 
-/* ======================================
-   نیمکت
-====================================== */
+/* =========================
+   تاکتیک
+========================= */
 
-function createBench(containerId,type){
+const TACTICS={
 
-    const box =
-        document
-        .getElementById(containerId);
+balanced:{
+    attack:1,
+    defense:1,
+    midfield:1
+},
 
-    box.innerHTML = "";
+attacking:{
+    attack:1.13,
+    defense:.90,
+    midfield:1.03
+},
 
+defensive:{
+    attack:.88,
+    defense:1.14,
+    midfield:1.02
+},
 
-    for(
-        let i=1;
-        i<=5;
-        i++
-    ){
+counter:{
+    attack:1.08,
+    defense:1.04,
+    midfield:.94
+},
 
-        const input =
-            document.createElement("input");
-
-
-        input.type = "text";
-
-        input.className =
-            `${type}-bench-player`;
-
-        input.placeholder =
-            "بازیکن نیمکت " + i;
-
-        input.style.marginBottom =
-            "8px";
-
-
-        box.appendChild(input);
-
-    }
-
+pressing:{
+    attack:1.05,
+    defense:1.07,
+    midfield:1.08
 }
 
-
-/* ======================================
-   گرفتن ترکیب
-====================================== */
-
-function readPlayers(type){
-
-    const inputs =
-        document.querySelectorAll(
-            `.${type}-starting-player`
-        );
-
-    const players = [];
+};
 
 
-    inputs.forEach(function(input,index){
+/* =========================
+   تیم
+========================= */
 
-        const name =
-            input.value.trim();
+function createTeam(names,tactic){
 
+    const players=
+        names
+        .map(getPlayer)
+        .filter(Boolean);
 
-        if(name !== ""){
+    let attack=0;
+    let midfield=0;
+    let defense=0;
 
-            players.push({
+    players.forEach(p=>{
 
-                name:name,
-
-                position:
-                    positions[index],
-
-                /*
-                اگر Overall واقعی از
-                بانک بازیکنان وصل شود،
-                این مقدار جایگزین می‌شود.
-                */
-
-                overall:75
-
-            });
-
-        }
+        attack+=p.attack;
+        midfield+=p.midfield;
+        defense+=p.defense;
 
     });
 
+    const count=Math.max(players.length,1);
 
-    return players;
+    attack/=count;
+    midfield/=count;
+    defense/=count;
 
-}
+    const t=TACTICS[tactic]||TACTICS.balanced;
 
+    attack*=t.attack;
+    midfield*=t.midfield;
+    defense*=t.defense;
 
-/* ======================================
-   گرفتن نیمکت
-====================================== */
+    const power=
+        (attack*.40)+
+        (midfield*.32)+
+        (defense*.28);
 
-function readBench(type){
+    return {
 
-    const inputs =
-        document.querySelectorAll(
-            `.${type}-bench-player`
-        );
+        players,
 
-    const bench=[];
+        attack,
+        midfield,
+        defense,
 
-
-    inputs.forEach(function(input){
-
-        const name =
-            input.value.trim();
-
-
-        if(name !== ""){
-
-            bench.push({
-
-                name:name,
-
-                overall:75
-
-            });
-
-        }
-
-    });
-
-
-    return bench;
-
-}
-
-
-/* ======================================
-   مرحله ۲
-====================================== */
-
-document
-.getElementById("nextTacticBtn")
-.addEventListener("click",function(){
-
-    homePlayers =
-        readPlayers("home");
-
-    awayPlayers =
-        readPlayers("away");
-
-
-    homeBench =
-        readBench("home");
-
-    awayBench =
-        readBench("away");
-
-
-    if(homePlayers.length !== 11){
-
-        document
-        .getElementById("lineupMessage")
-        .innerHTML =
-        '<div class="notice error">برای تیم میزبان دقیقاً ۱۱ بازیکن اصلی وارد کن.</div>';
-
-        return;
-
-    }
-
-
-    if(awayPlayers.length !== 11){
-
-        document
-        .getElementById("lineupMessage")
-        .innerHTML =
-        '<div class="notice error">برای تیم مهمان دقیقاً ۱۱ بازیکن اصلی وارد کن.</div>';
-
-        return;
-
-    }
-
-
-    document
-    .getElementById("homeTacticTitle")
-    .textContent =
-    "🏠 " + homeTeam;
-
-
-    document
-    .getElementById("awayTacticTitle")
-    .textContent =
-    "✈️ " + awayTeam;
-
-
-    document
-    .getElementById("step2")
-    .classList
-    .add("hidden");
-
-
-    document
-    .getElementById("step3")
-    .classList
-    .remove("hidden");
-
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-
-});
-
-
-/* ======================================
-   Overall
-====================================== */
-
-function getOverall(player){
-
-    return Number(
-        player.overall
-    ) || 75;
-
-}
-
-
-function average(players){
-
-    if(players.length===0)
-        return 75;
-
-
-    let total=0;
-
-
-    players.forEach(function(player){
-
-        total +=
-            getOverall(player);
-
-    });
-
-
-    return total / players.length;
-
-}
-
-
-/* ======================================
-   تأثیر تاکتیک
-====================================== */
-
-function tacticPower(tactic){
-
-    const power={
-
-        balanced:0,
-
-        attacking:5,
-
-        defensive:2,
-
-        possession:4,
-
-        counter:4,
-
-        pressing:3
+        power
 
     };
 
+}
 
-    return power[tactic] || 0;
+
+/* =========================
+   عدد تصادفی کنترل‌شده
+========================= */
+
+function random(min,max){
+
+    return Math.random()*(max-min)+min;
 
 }
 
 
-/* ======================================
-   بازیکن تصادفی
-====================================== */
+/* =========================
+   گل
+========================= */
 
-function randomPlayer(players){
+function calculateGoals(team,opponent){
 
-    return players[
+    const difference=
+        team.power-opponent.power;
+
+    let expected=
+        1.25+
+        difference/28;
+
+    expected=
+        Math.max(
+            .25,
+            Math.min(3.4,expected)
+        );
+
+    let goals=0;
+
+    /*
+    چند موقعیت با احتمال وابسته
+    به قدرت تیم ایجاد می‌کنیم.
+    */
+
+    for(let i=0;i<5;i++){
+
+        const chance=
+            expected*.13+
+            random(-.025,.025);
+
+        if(Math.random()<chance){
+            goals++;
+        }
+
+    }
+
+    /*
+    اگر تیم خیلی قوی‌تر باشد،
+    احتمال گل بیشتر می‌شود.
+    */
+
+    if(
+        difference>15 &&
+        Math.random()<.55
+    ){
+        goals++;
+    }
+
+    return Math.min(goals,5);
+
+}
+
+
+/* =========================
+   گلزن
+========================= */
+
+function scorer(team){
+
+    let candidates=
+        team.players.filter(
+            p=>p.position==="FW"
+        );
+
+    if(!candidates.length){
+
+        candidates=
+            team.players.filter(
+                p=>p.position==="MF"
+            );
+
+    }
+
+    if(!candidates.length)
+        candidates=team.players;
+
+    return candidates[
         Math.floor(
-            Math.random()*players.length
+            Math.random()*candidates.length
         )
     ];
 
+
 }
 
 
-/* ======================================
-   شروع مسابقه
-====================================== */
+/* =========================
+   شبیه‌سازی
+========================= */
 
-document
-.getElementById("startMatchBtn")
-.addEventListener("click",function(){
+function simulate(){
 
-    if(
-        homePlayers.length !== 11 ||
-        awayPlayers.length !== 11
-    ){
+    const team1Name=
+        document.getElementById("team1")
+        .value.trim();
 
-        alert(
-            "ابتدا ترکیب هر دو تیم را کامل کن."
-        );
+    const team2Name=
+        document.getElementById("team2")
+        .value.trim();
 
+    if(!team1Name||!team2Name){
+
+        alert("نام هر دو تیم را وارد کن.");
         return;
 
     }
 
 
-    const homeTactic =
-        document
-        .getElementById("homeTactic")
+    const names1=
+        document.getElementById("players1")
+        .value
+        .split("\n")
+        .map(x=>x.trim())
+        .filter(Boolean);
+
+
+    const names2=
+        document.getElementById("players2")
+        .value
+        .split("\n")
+        .map(x=>x.trim())
+        .filter(Boolean);
+
+
+    if(!names1.length||!names2.length){
+
+        alert("بازیکنان هر دو تیم را وارد کن.");
+        return;
+
+    }
+
+
+    const tactic1=
+        document.getElementById("tactic1")
+        .value;
+
+    const tactic2=
+        document.getElementById("tactic2")
         .value;
 
 
-    const awayTactic =
-        document
-        .getElementById("awayTactic")
-        .value;
+    const team1=
+        createTeam(names1,tactic1);
+
+    const team2=
+        createTeam(names2,tactic2);
 
 
-    /* قدرت واقعی ترکیب */
+    let score1=
+        calculateGoals(team1,team2);
 
-    let homePower =
-        average(homePlayers)
-        +
-        tacticPower(homeTactic)
-        +
-        3;
-
-
-    let awayPower =
-        average(awayPlayers)
-        +
-        tacticPower(awayTactic);
+    let score2=
+        calculateGoals(team2,team1);
 
 
     /*
-    اختلاف قدرت روی شانس گل
-    تأثیر می‌گذارد.
+    اختلاف شدید قدرت
     */
 
-    let homeChance =
-        (homePower-65)/8
-        +
-        Math.random()*2;
+    const difference=
+        team1.power-team2.power;
 
 
-    let awayChance =
-        (awayPower-65)/8
-        +
-        Math.random()*2;
+    if(
+        difference>18 &&
+        score1<=score2 &&
+        Math.random()<.72
+    ){
+        score1=
+            Math.min(5,score2+1);
+    }
 
 
-    let homeGoals =
+    if(
+        difference<-18 &&
+        score2<=score1 &&
+        Math.random()<.72
+    ){
+        score2=
+            Math.min(5,score1+1);
+    }
+
+
+    /*
+    مالکیت
+    */
+
+    let possession1=
+        50+
+        (team1.midfield-team2.midfield)*.38;
+
+    possession1=
+        Math.round(
+            Math.max(
+                30,
+                Math.min(70,possession1)
+            )
+        );
+
+    const possession2=
+        100-possession1;
+
+
+    /*
+    شوت
+    */
+
+    const shots1=
         Math.max(
-            0,
-            Math.round(homeChance)
+            3,
+            Math.round(
+                7+
+                team1.attack/9+
+                random(-2,3)
+            )
+        );
+
+    const shots2=
+        Math.max(
+            3,
+            Math.round(
+                7+
+                team2.attack/9+
+                random(-2,3)
+            )
         );
 
 
-    let awayGoals =
-        Math.max(
-            0,
-            Math.round(awayChance)
+    const onTarget1=
+        Math.min(
+            shots1,
+            Math.max(
+                score1,
+                Math.round(
+                    shots1*.35+
+                    random(-1,2)
+                )
+            )
         );
 
 
-    homeGoals =
-        Math.min(7,homeGoals);
+    const onTarget2=
+        Math.min(
+            shots2,
+            Math.max(
+                score2,
+                Math.round(
+                    shots2*.35+
+                    random(-1,2)
+                )
+            )
+        );
 
-    awayGoals =
-        Math.min(7,awayGoals);
+
+    /*
+    خطا
+    */
+
+    const fouls1=
+        Math.round(
+            random(7,17)
+        );
+
+    const fouls2=
+        Math.round(
+            random(7,17)
+        );
 
 
-    /* گل‌ها */
+    /*
+    کاشته
+    */
+
+    const free1=
+        Math.round(
+            fouls2*.65
+        );
+
+    const free2=
+        Math.round(
+            fouls1*.65
+        );
+
+
+    /*
+    کرنر
+    */
+
+    const corners1=
+        Math.max(
+            1,
+            Math.round(
+                shots1*.42
+            )
+        );
+
+    const corners2=
+        Math.max(
+            1,
+            Math.round(
+                shots2*.42
+            )
+        );
+
+
+    /*
+    گل‌ها
+    */
 
     const goals=[];
 
 
     for(
         let i=0;
-        i<homeGoals;
+        i<score1;
         i++
     ){
 
-        const player =
-            randomPlayer(homePlayers);
-
+        const p=scorer(team1);
 
         goals.push({
 
             minute:
-                5+
                 Math.floor(
-                    Math.random()*86
+                    random(5,89)
                 ),
 
-            player:
-                player.name,
+            team:team1Name,
 
-            team:
-                homeTeam
+            player:p.name
 
         });
 
@@ -1050,27 +1084,22 @@ document
 
     for(
         let i=0;
-        i<awayGoals;
+        i<score2;
         i++
     ){
 
-        const player =
-            randomPlayer(awayPlayers);
-
+        const p=scorer(team2);
 
         goals.push({
 
             minute:
-                5+
                 Math.floor(
-                    Math.random()*86
+                    random(5,89)
                 ),
 
-            player:
-                player.name,
+            team:team2Name,
 
-            team:
-                awayTeam
+            player:p.name
 
         });
 
@@ -1078,237 +1107,280 @@ document
 
 
     goals.sort(
-        function(a,b){
-            return a.minute-b.minute;
-        }
+        (a,b)=>
+        a.minute-b.minute
     );
 
 
-    /* مالکیت */
-
-    let possession =
-        Math.round(
-            50+
-            (homePower-awayPower)*0.7
-        );
-
-
-    possession =
-        Math.max(
-            30,
-            Math.min(70,possession)
-        );
-
-
-    /* آمار */
-
-    const stats={
-
-        homePossession:
-            possession+"%",
-
-        awayPossession:
-            (100-possession)+"%",
-
-        homeShots:
-            7+
-            homeGoals*2+
-            Math.floor(Math.random()*8),
-
-        awayShots:
-            7+
-            awayGoals*2+
-            Math.floor(Math.random()*8),
-
-        homeShotsOnTarget:
-            2+
-            homeGoals+
-            Math.floor(Math.random()*5),
-
-        awayShotsOnTarget:
-            2+
-            awayGoals+
-            Math.floor(Math.random()*5),
-
-        homeCorners:
-            2+
-            Math.floor(Math.random()*7),
-
-        awayCorners:
-            2+
-            Math.floor(Math.random()*7),
-
-        homeFouls:
-            5+
-            Math.floor(Math.random()*10),
-
-        awayFouls:
-            5+
-            Math.floor(Math.random()*10),
-
-        homeOffsides:
-            Math.floor(Math.random()*4),
-
-        awayOffsides:
-            Math.floor(Math.random()*4)
-
-    };
-
-
-    /* کارت زرد */
+    /*
+    کارت زرد
+    */
 
     const yellow=[];
 
+    const yellow1=
+        Math.random()<.82
+        ?Math.floor(random(0,3))
+        :0;
 
-    if(Math.random()<0.75){
+    const yellow2=
+        Math.random()<.82
+        ?Math.floor(random(0,3))
+        :0;
 
-        const p =
-            randomPlayer(homePlayers);
+
+    for(
+        let i=0;
+        i<yellow1;
+        i++
+    ){
 
         yellow.push({
 
             minute:
-                15+
-                Math.floor(Math.random()*70),
+                Math.floor(random(15,88)),
 
-            player:p.name,
+            team:team1Name,
 
-            team:homeTeam
+            player:
+                team1.players[
+                    Math.floor(
+                        Math.random()*
+                        team1.players.length
+                    )
+                ].name
 
         });
 
     }
 
 
-    if(Math.random()<0.75){
-
-        const p =
-            randomPlayer(awayPlayers);
+    for(
+        let i=0;
+        i<yellow2;
+        i++
+    ){
 
         yellow.push({
 
             minute:
-                15+
-                Math.floor(Math.random()*70),
+                Math.floor(random(15,88)),
 
-            player:p.name,
+            team:team2Name,
 
-            team:awayTeam
+            player:
+                team2.players[
+                    Math.floor(
+                        Math.random()*
+                        team2.players.length
+                    )
+                ].name
 
         });
 
     }
 
 
-    /* کارت قرمز */
+    /*
+    کارت قرمز
+    */
 
     const red=[];
 
+    if(Math.random()<.06){
 
-    if(Math.random()<0.08){
+        const team=
+            Math.random()<.5
+            ?team1
+            :team2;
 
-        const p =
-            randomPlayer(homePlayers);
+        const teamName=
+            team===team1
+            ?team1Name
+            :team2Name;
+
+        const player=
+            team.players[
+                Math.floor(
+                    Math.random()*
+                    team.players.length
+                )
+            ];
+
 
         red.push({
 
             minute:
-                20+
-                Math.floor(Math.random()*60),
+                Math.floor(random(35,88)),
 
-            player:p.name,
+            team:teamName,
 
-            team:homeTeam
-
-        });
-
-    }
-
-
-    if(Math.random()<0.08){
-
-        const p =
-            randomPlayer(awayPlayers);
-
-        red.push({
-
-            minute:
-                20+
-                Math.floor(Math.random()*60),
-
-            player:p.name,
-
-            team:awayTeam
+            player:player.name
 
         });
 
     }
 
 
-    /* تعویض */
+    /*
+    بهترین بازیکن
+    */
 
-    const substitutions=[];
+    const all=[
+        ...team1.players,
+        ...team2.players
+    ];
+
+    all.sort(
+        (a,b)=>
+        b.power-a.power
+    );
+
+    const best=all[0];
 
 
-    if(homeBench.length>0){
+    /*
+    نمایش
+    */
 
-        substitutions.push({
+    renderResult({
 
-            minute:
-                55+
-                Math.floor(Math.random()*30),
+        team1:team1Name,
+        team2:team2Name,
 
-            team:homeTeam,
+        score1,
+        score2,
 
-            player:
-                randomPlayer(homeBench).name
+        possession1,
+        possession2,
+
+        shots1,
+        shots2,
+
+        onTarget1,
+        onTarget2,
+
+        fouls1,
+        fouls2,
+
+        free1,
+        free2,
+
+        corners1,
+        corners2,
+
+        goals,
+        yellow,
+        red,
+
+        power1:Math.round(team1.power),
+        power2:Math.round(team2.power),
+
+        best:best.name
+
+    });
+
+}
+
+
+/* =========================
+   نمایش نتیجه
+========================= */
+
+function renderResult(data){
+
+    const result=
+        document.getElementById("result");
+
+    let winner="🤝 مساوی";
+
+    if(data.score1>data.score2)
+        winner="🏆 "+data.team1+" برنده شد";
+
+    if(data.score2>data.score1)
+        winner="🏆 "+data.team2+" برنده شد";
+
+
+    let goalsHTML="";
+
+    if(!data.goals.length){
+
+        goalsHTML=
+        `<div class="event">
+        ⚽ هیچ گلی به ثمر نرسید.
+        </div>`;
+
+    }else{
+
+        data.goals.forEach(g=>{
+
+            goalsHTML+=`
+            <div class="event">
+            ⚽ دقیقه ${g.minute}
+            — ${escapeHTML(g.player)}
+            <br>
+            <span class="info">
+            ${escapeHTML(g.team)}
+            </span>
+            </div>
+            `;
 
         });
 
     }
 
 
-    if(awayBench.length>0){
+    let yellowHTML="";
 
-        substitutions.push({
+    if(!data.yellow.length){
 
-            minute:
-                55+
-                Math.floor(Math.random()*30),
+        yellowHTML=
+        `<div class="event">
+        کارت زردی ثبت نشد.
+        </div>`;
 
-            team:awayTeam,
+    }else{
 
-            player:
-                randomPlayer(awayBench).name
+        data.yellow.forEach(c=>{
+
+            yellowHTML+=`
+            <div class="event">
+            🟨 دقیقه ${c.minute}
+            — ${escapeHTML(c.player)}
+            <br>
+            <span class="info">
+            ${escapeHTML(c.team)}
+            </span>
+            </div>
+            `;
 
         });
 
     }
 
 
-    /* بهترین بازیکن */
+    let redHTML="";
 
-    const mvp =
-        homePower >= awayPower
-        ? randomPlayer(homePlayers)
-        : randomPlayer(awayPlayers);
+    if(!data.red.length){
 
+        redHTML=
+        `<div class="event">
+        🟥 کارت قرمزی ثبت نشد.
+        </div>`;
 
-    showResult({
+    }else{
 
-        homeGoals:homeGoals,
+        data.red.forEach(c=>{
 
-        awayGoals:awayGoals,
+            redHTML+=`
+            <div class="event">
+            🟥 دقیقه ${c.minute}
+            — ${escapeHTML(c.player)}
+            <br>
+            <span class="info">
+            ${escapeHTML(c.team)}
+            </span>
+            </div>
+            `;
 
-        goals:goals,
-
-        yellow:yellow,
-
-        red:red,
-
-        substitutions:
-            substitutions,
-
-        stats:stats,
-
-       
+   
